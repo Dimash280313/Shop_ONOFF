@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+    <link rel="stylesheet" href="/style/style_photos.css">
+</head>
+<body>
+    <div class="h1">
+        <h1>Our Photos</h1>
+    </div>
+    <div class="slider-container" id="slider">
+        <img src="/img/ideogram-v3.0_Generate_a_realistic_photo_of_a_modern_electronics_store_with_a_bright_and_eye-c-0.jpg" class="active">
+        <img src="/img/ideogram-v3.0_Generate_a_photo_of_a_modern_electronics_store_interior_with_a_prominent_sign_re-0.jpg">
+        <img src="/img/ideogram-v3.0_Generate_a_high-quality_photo_of_a_modern_electronics_store_product_with_the_bra-0.jpg">
+        <img src="/img/аааааааааааааааааааааааааабббббббббббббббббб.jpg">
+    </div>
+    <div class="home">
+        <a href="/index/index.html">HOME</a>
+    </div>
+
+<script>
+    function startSlider() {
+        const images = document.querySelectorAll('#slider img');
+        let currentIndex = 0;
+        const intervalTime = 3000;
+
+        setInterval(() => {
+            images[currentIndex].classList.remove('active');
+            
+            currentIndex = (currentIndex + 1) % images.length;
+            
+            images[currentIndex].classList.add('active');
+        }, intervalTime);
+    }
+
+    //Помог ИИ
+    startSlider();
+</script> 
+</body>
+</html>

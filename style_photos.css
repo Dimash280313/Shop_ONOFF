@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Ballet:opsz@16..72&family=Betania+Patmos&family=Bpmf+Huninn&family=Dancing+Script:wght@400..700&family=Delius+Unicase:wght@400;700&family=Fascinate+Inline&family=Gamja+Flower&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaushan+Script&family=Lobster&family=Luckiest+Guy&family=Marck+Script&family=New+Amsterdam&family=Notable&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+CU+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&family=Sigmar+One&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.h1 {
+    margin-top: 26px;
+    display: flex;
+    top: 40px;
+    font-size: 32px;
+}
+
+.h1 h1 {
+    margin: 0 auto;
+    font-family: 'Bpmf Huninn' , sans-serif;
+}
+
+
+.slider-container {
+    width: 600px;
+    height: 600px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border: 2PX SOLID black;
+}
+
+.slider-container img {
+    width: 600px;
+    height: 600px;    
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition:  1s ;
+}
+
+.slider-container img.active {
+    opacity: 1;
+}
+
+.home {
+    margin-top: 50px;
+    display: flex;
+}
+
+.home a {
+    margin: 0 auto;
+    color: black;
+    border: 2px solid black;
+    font-size: 18px;
+    padding: 20px 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: 'Bpmf Huninn'  , sans-serif;
+    transition: 200ms;
+}
+
+.home a:hover{
+    padding: 25px 45px;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .slider-container {
+        height: 400px;
+        width: 400px;
+    }
+
+    .slider-container img {
+        height: 400px;
+        width: 400px;       
+    }
+
+    .h1  {
+        font-size: 24px;
+    }
+}

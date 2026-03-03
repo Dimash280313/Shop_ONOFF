@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="/style/style_aboutus.css">
+</head>
+<body>
+    <section class="about-section">
+        <div class="container">
+            <h1>We are <span class="span1">ON</span><span class="span2">OFF</span></h1>
+            <p class="subtitle">Your guide to the world of high technology since 2015.</p>
+            
+        <div class="grid">
+            <div class="card">
+                    <h3>Only original</h3>
+                    <p>We work directly with brands. No copies, only official guarantees.</p>
+            </div>
+            <div class="card">
+                    <h3>Expert approach</h3>
+                    <p>Our consultants know the difference between IPS and OLED matrices better than their own address.</p>
+            </div>
+            <div class="card">
+                    <h3>Fast service</h3>
+                    <p>Our own service center and same-day delivery throughout the city.</p>
+            </div>
+         </div>
+
+        <div class="stats">
+            <div class="stat-item"><span>500k+</span><p>Items sold</p></div>
+            <div class="stat-item"><span>120</span><p>World brands</p></div>
+            <div class="stat-item"><span>150</span><p>Stores in the CIS</p></div>
+        </div>
+        </div>
+        <div class="home">
+            <a href="/index/index.html">
+             <h6>HOME</h6>
+             <img src="/img/го эт хом.png" alt="">
+        </a>
+        </div>
+
+        <script>
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+</script>
+    </section>
+</body>
+</html>

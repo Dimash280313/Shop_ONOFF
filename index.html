@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONOFF</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+<header>
+    <div class="header_container">
+        <img src="/img/техника_магазин-removebg-preview.png" alt="logo" class="logo">
+        <input type="checkbox" id="menu-bar" hidden>
+        <label for="menu-bar" class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="links">
+            <a href="/index/index_aboutus.html" class="link">About us</a>
+            <a href="/index/index_reviews.html" class="link">Reviews</a>
+            <a href="/index/index_position.html" class="link">Our location</a>
+            <a href="/index/index_photos.html" class="link">Photos</a>
+        </nav>
+    </div>
+</header>
+    <main>
+        <div id="cards">
+            <div class="card_contant">
+            <div class="card">
+                <a href="#">
+                <img src="/img/iphone-removebg-preview.png" alt="" class="card_img">
+                <h4>Phones</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/холодильник.webp" alt="" class="card_img">
+                <h4>Refrigerators</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/планшеты.jpg" alt="" class="card_img">
+                <h4>Tablets</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/ноуты.jpg" alt="" class="card_labtop">
+                <h4 class="labtop_h4">Laptops</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/комп_комп_комп-removebg-preview.png" alt="" class="card_komp">
+                <h4>Computers</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/алиса.png" alt="" class="card_img">
+                <h4>Smart speakers</h4>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a href="#">
+                <img src="/img/Микро_волны-removebg-preview.png" alt="" class="card_img">
+                <h4>Microwaves</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/пыль.jpg" alt="" class="car_img">
+                <h4>Vacuum cleaners</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/утюг яяя.jpg" alt="" class="card_img">
+                <h4>Irons</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/одежда.jpg" alt="" class="card_img">
+                <h4>Washing machines</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/кофе.webp" alt="" class="car_img">
+                <h4>Coffee machine</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                <img src="/img/пылесос.jpg" alt="" class="robo">
+                <h4>Robot vacuum cleaner</h4>
+                </a>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h2 class="footer-logo">ON<span>OFF</span></h2>
+      <p>The best electronics and gadgets with a quality guarantee.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Catalog</h3>
+      <ul>
+        <li><a href="#cards">Smartphones</a></li>
+        <li><a href="#cards">Laptops</a></li>
+        <li><a href="#cards">Computers</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">Delivery</a></li>
+        <li><a href="#">Return</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Subscription</h3>
+      <div class="subscribe-box">
+        <input type="email" placeholder="Your e-mail">
+        <button>OK</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+     2026 <span class="span4">nnnn</span><span class="all_span"><span class="span2">ON</span><span class="span1">OFF</span><span class="span3"> ❤️</span></span>All rights reserved.
+  </div>
+</footer>
+
+
+
+
+
+
+<script>
+    document.querySelectorAll('.footer-section a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.card').forEach(card => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(60px)";
+        card.style.transition = "all 1s ease-out";
+        observer.observe(card);
+    });
+
+    const subscribeBtn = document.querySelector('.subscribe-box button');
+    const subscribeInput = document.querySelector('.subscribe-box input');
+
+    subscribeBtn.addEventListener('click', () => {
+        if (subscribeInput.value.includes('@')) {
+            subscribeBtn.textContent = ':)';
+            subscribeBtn.style.background = '#27ae60';
+            subscribeInput.value = 'Success!';
+            subscribeInput.disabled = true;
+        } else {
+            subscribeInput.style.border = '1px solid red';
+            setTimeout(() => subscribeInput.style.border = 'none', 1000);
+        }
+    });
+</script>
+</body>
+</html>
